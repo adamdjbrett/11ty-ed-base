@@ -1,3 +1,44 @@
+# 11ty-Ed a port of Ed from ~~Jekyll~~ to 11ty.
+## CHANGELOG
+### SCSS 
+1. Setup SASS using [11ty recipes](https://11ty.recipes/recipes/add-a-sass-workflow/)
+
+### Custom Layouts
+Import the following layouts
+1. default.html
+2. drama.html
+3. narrative.html
+4. page.html
+5. poem.html
+6. post.html
+
+### Import Partials
+* head.html
+* sidebar-toc.html
+* sidebar.html
+
+### Implement Eleventy TOC
+- Need table of contents
+
+### Implement Hypothesis
+
+### Pagefind
+- [rknight](https://rknight.me/blog/using-pagefind-with-eleventy-for-search/)
+- following [Fat Buddha Designs](https://fatbuddhadesigns.co.uk/journal/pathfind-search/)
+- add pagefind (where and how the hell do I get this to work in my `eleventy.config.js`)
+```
+const { execSync } = require('child_process');
+
+module.exports = function (config) {
+
+  // Pathfind Process
+  config.on('eleventy.after', async () => {
+    execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
+  });
+```
+
+
+
 # eleventy-base-blog v9
 
 A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v3.0 release](https://github.com/11ty/eleventy/releases/tag/v3.0.0)).

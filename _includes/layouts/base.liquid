@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  {% include "partials/head.liquid" %}
+
+  <body class="theme-base-{{site.color-scheme}}">
+    {% if page.toc %}
+      {% include "partials/sidebar-toc.liquid" %}
+    {% else %}
+      {% include "partials/sidebar.liquid" %}
+    {% endif %}
+
+    <div class="wrap">
+      {% include "partials/header.liquid" %}
+      <main class="container content" id="main">
+        {{ content }}
+      </main>
+    </div>
+
+    {% include "partials/scripts.liquid" %}
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{% raw %}
+{% capture resource_url %}{{ site.url }}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+{% capture directory_url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+<link rel="canonical" href="{{ resource_url }}" />
+
+<title>
+  {% if page.title == "Home" %}
+    {{ site.title }}
+  {% else %}
+    {{ page.title }}
+  {% endif %}
+</title>{% endraw %}

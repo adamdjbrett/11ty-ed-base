@@ -1,0 +1,8 @@
+{% raw %}
+<meta property="dc:title" content="{{ page.title }}" />
+<meta property="dc:creator" content="{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}" />
+<meta property="dc:identifier" content="{{ resource_url }}" />
+{% if page.editor %}<meta property="dc:contributor" content="{{ page.editor }}" />{% endif %}
+{% if page.publication-date %}<meta property="dc:date" content="{{ page.publication-date }}" />{% endif %}
+{% if page.rights %}<meta property="dc:rights" content="{{ page.rights }}" />{% endif %}
+<meta property="dc:source" content="{% if page.source %}{{ page.source }}{% else %}{{ site.title }}{% endif %}" />{% endraw %}

@@ -1,0 +1,55 @@
+{% comment %}JavaScript includes{% endcomment %}
+<script>
+// Highlight search Query
+var url = window.location.href;
+if (url.lastIndexOf("?q=") > 0) {
+  var stringloc = url.lastIndexOf("?q=") + 3;
+  var searchquery = decodeURIComponent(url.substr(stringloc));
+  var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+  var content = document.getElementById("main").innerHTML;
+  document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+}
+
+// Support sidebar toggle
+(function(document) {
+  var toggle = document.querySelector('.sidebar-toggle');
+  var sidebar = document.querySelector('#sidebar');
+  var sidebarNavLink = document.querySelector('.sidebar-nav-item');
+  var checkbox = document.querySelector('#sidebar-checkbox');
+
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    checkbox.checked = !checkbox.checked;
+    toggle.setAttribute('aria-expanded', checkbox.checked);
+    sidebar.setAttribute('aria-hidden', !checkbox.checked);
+  });
+
+  sidebar.addEventListener('transitionend', function() {
+    sidebarNavLink.focus()
+  });
+
+  sidebar.addEventListener('click', function(e) {
+    checkbox.checked = false;
+    toggle.setAttribute('aria-expanded', false);
+    sidebar.setAttribute('aria-hidden', true);
+  });
+})(document);
+
+// Facebook SDK
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: '589495744558280',
+    xfbml: true,
+    version: 'v2.6'
+  });
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>

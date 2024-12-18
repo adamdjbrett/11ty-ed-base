@@ -1,0 +1,25 @@
+{% raw %}
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
+
+  {% if page.toc %}
+    {% include 'partials/toc-nav' %}
+  {% else %}
+    {% include 'partials/sidebar-nav' %}
+  {% endif %}
+
+  <div class="sidebar-item">
+    <p>
+      {% if page.editor %}
+        Edited by {{ page.editor }}, {{ site.time | date: '%Y' }}.
+      {% endif %}
+    </p>
+    <p>
+      Built with <a href="https://minicomp.github.io/ed/">Ed.</a> Distributed under an MIT license.
+    </p>
+  </div>
+</aside>{% endraw %}
