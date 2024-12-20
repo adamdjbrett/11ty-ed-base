@@ -1,5 +1,4 @@
 ---
-layout: poem
 title: A Julia de Burgos
 author: Julia de Burgos
 editor: Alex Gil
