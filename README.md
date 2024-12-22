@@ -1,3 +1,6 @@
+# WORK IN PROGRESS
+dont go here. go to the [11ty.dev](https://11ty.dev) homepage and find a starter there.
+
 # 11ty-Ed a port of Ed from ~~Jekyll~~ to 11ty.
 ## CHANGELOG
 ### SCSS 
